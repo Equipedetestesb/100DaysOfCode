@@ -12,7 +12,7 @@ import org.openqa.selenium.By;    //Biblioteca para localizar elementos
 import org.openqa.selenium.WebDriver;     //Biblioteca do Webdriver
 import org.openqa.selenium.chrome.ChromeDriver;     //Biblioteca do motor do ChromeDriver
 
-public class ManipulaComponente {
+public class ManipulaComponenteRadiobutton {
 	WebDriver driver;
 
 	public static void main(String[] args) {
