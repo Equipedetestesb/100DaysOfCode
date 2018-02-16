@@ -1,0 +1,37 @@
+//Este código manipula o arquivo em excel apenas com células preenchidas com strings, com o comando Iterator para percorrer todas as células
+
+package com.iteracao;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Iterator;
+
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.openqa.selenium.WebDriver;
+
+public class ManipulaIteracao {
+	WebDriver driver;
+  public static void main(String[] args)throws IOException{
+  
+      try{
+      File Arq = new File("C:\\Nova pasta\\Pasta1.xls");
+	    FileInputStream Arquivo = new FileInputStream(Arq);
+	    HSSFWorkbook trabalho = new HSSFWorkbook(Arquivo);
+	    HSSFSheet celula = trabalho .  getSheetAt ( 0 ); 
+	    Iterator<Row> rowIterator = celula.iterator();
+	    while(rowIterator.hasNext()){
+	    Row row = rowIterator.next();
+	    Iterator<Cell> cellIterator = row.iterator();
+	    while(cellIterator.hasNext()){
+	    Cell cell = cellIterator.next();
+	    	System.out.println(cell.getStringCellValue());
+	    }
+	    }
+      }catch(Exception a){
+			System.out.println("Erro");
+		}
+    }
+    }
