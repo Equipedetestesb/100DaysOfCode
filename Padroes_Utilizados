@@ -1,0 +1,35 @@
+>>Todos estão de acordo com as sugestões abaixo?
+
+PADRÕES UTILIZADOS NO PROJETO
+Para melhor organizar, é sugerido utilizar os seguintes padrões:
+
+1-As pastas padrões nas máquinas locais
+Raiz:  C:\\100DaysOfCode
+Outras Pastas:
+C:\\100DaysOfCode\\Drivers
+C:\\100DaysOfCode\\Evidencias
+C:\\100DaysOfCode\\Reports
+C:\\100DaysOfCode\\Dados
+
+2-Project no Eclipse
+Nome: 100DaysOfCode
+
+3-Package no Eclipse
+Nome: com.selenium.(nome)
+Exs: com.selenium.pdf
+     com.selenium.excel
+
+4-Classes no Eclipse
+Nome que indique o que a classe realiza
+
+5-O cabeçalho do arquivo/classe
+//DayXXX: Nome do Arquivo
+//Date: (Data de Postagem do Arquivo) - By (Autor do Arquivo)
+//Versões utilizadas dos drivers
+Ex:
+//Day016: Gerando relatório PDF com iText
+//Date: 16/02/2018 - By Carlos Peçanha
+//Eclipse: Mars 2, Apache Tomcat 8.0, Selenium Server Standalone 3.6.0, Itext 5.1.0
+
+6-Os arquivos publicados devem ter o nome: DayXXX: Nome do Arquivo
+Ex.: Day016: Gerando relatório PDF com iText
