@@ -1,0 +1,37 @@
+package com.twitter;
+
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.NoSuchElementException;
+
+public class DualList {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\conrado\\Desktop\\Selenium\\chromedriver.exe");
+		
+		WebDriver driver = new ChromeDriver();
+				
+		driver.get("https://czeckd.github.io/angular-dual-listbox/demo/");
+		WebElement myDynamicElement = (new WebDriverWait(driver, 30)).until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/demo-app/div/dual-list/div/div[1]/div[1]/ul/li[1]")));
+		
+		System.out.println("espera ate o elemento esta visivel ok");
+		driver.findElement(By.xpath("/html/body/demo-app/div/dual-list/div/div[1]/div[1]/ul/li[1]")).click();
+		System.out.println("primeiro click ok");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.findElement(By.xpath("/html/body/demo-app/div/dual-list/div/div[1]/button")).click();
+		System.out.println("Adicao do primeiro elemento ok");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+				
+		System.out.println("Operacao realizada com sucesso");
+		driver.close();
+						 		 		
+	}
+
+}
