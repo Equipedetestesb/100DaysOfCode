@@ -1,0 +1,28 @@
+//Pré-requisitos para realizar a automação:
+//Ter o AutoIT instalado
+//Ter visualizado o arquivo "BreveAutoIT.jpg" 
+//Esta execução realiza o carregamento de um arquivo em determinado site, onde o mesmo solicita interação com os pop-ups do windows 
+
+package com.auxilioautoit;
+import java.io.IOException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.By;
+
+public class ManipulaPopupsDoWindows {
+
+	
+
+  public static void main(String[] args)throws IOException, InterruptedException{
+		
+		
+		System.setProperty("webdriver.chrome.driver", "C:\\Automação\\chromedriver32.exe");//Localização do motor instalado na máquina
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://smallpdf.com/pt/jpg-para-pdf");//abre a página 
+		driver.manage().window().maximize();// maximiza a tela
+		driver.findElement(By.className("omnibox-link")).click();//acessa o botão de anexar o documento
+		Thread.sleep(5000);//atraso até que o pop-up seja totalmente carregado
+		Runtime.getRuntime().exec("C:\\Users\\Lilo\\Desktop\\AutoItScript01.exe");//execução do script que carrega a imagem no site
+  }
+	
+}
