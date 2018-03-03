@@ -1,0 +1,61 @@
+package com.selenium.assertivas;
+
+import java.util.concurrent.TimeUnit;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import junit.framework.Assert;
+
+public class UsandoAssertEquals {
+
+	WebDriver driver;
+
+	@Before
+	public void inicializar(){
+		System.setProperty("webdriver.chrome.driver", "C:\\100DaysOfCode\\Drivers\\chromedriver32.exe");
+		WebDriver driver = new ChromeDriver();
+		
+		driver.manage().window().maximize();	 
+		driver.get("http://www.sirceb.com.br/");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+		driver.findElement(By.linkText("Contato")).click();
+		
+	}
+	
+	@Test
+	public void PreencheFormulario() {
+				
+		driver.findElement(By.name("your-name")).sendKeys("um nome");
+		driver.findElement(By.name("your-email")).sendKeys("email inválido");
+		driver.findElement(By.name("CPF")).sendKeys("98765432100");
+		driver.findElement(By.name("your-subject")).sendKeys("um assunto");
+		driver.findElement(By.name("your-message")).sendKeys("uma mensagem");
+		
+		driver.findElement(By.xpath("//input[@value='Enviar']")).click();
+		
+	}
+	
+	@Test
+	public void RealizaValidacao(){
+		
+		
+		String mensagem = driver.findElement(By.className("wpcf7-not-valid-tip")).getText();
+		assertEquals("O endereço de e-mail parece inválido.", mensagem);
+	}
+
+	@After
+	public void finalizar() {
+	 
+		driver.close();
+		driver.quit();
+	 
+	}
+	
+	
+}
