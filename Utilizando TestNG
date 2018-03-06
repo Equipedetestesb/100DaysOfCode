@@ -4,12 +4,14 @@ import org.testng.annotations.Test;
 import org.testng.AssertJUnit;
 import org.testng.asserts.Assertion;
 import org.testng.annotations.BeforeTest;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.server.handler.SendKeys;
 import org.testng.annotations.AfterMethod;
 //import org.testng.annotations.Assert;
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
+
 
 
 public class SampleTestNGTest {
@@ -27,11 +29,20 @@ public class SampleTestNGTest {
 	}
 	
 	
-	@Test
+	@Test(priority =0)
   public void verifyHomepageTitle() {
 		String expectedTitle = "Twitter. É o que está acontecendo.";
 		String actualTitle = driver.getTitle();
 		AssertJUnit.assertEquals(actualTitle, expectedTitle);
-		driver.close();
+				
   }
+	@Test(priority =1)
+	  public void register() {
+		String expectedTitle1 = "Nada esta acontecendo.";
+		String actualTitle1 = driver.getTitle();
+		AssertJUnit.assertEquals(actualTitle1, expectedTitle1);
+		
+		
+	  }
+	
 }
