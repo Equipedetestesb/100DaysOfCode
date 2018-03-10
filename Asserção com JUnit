@@ -29,7 +29,7 @@ public class UsandoAssertEquals {
 	}
 	
 	@Test
-	public void PreencheFormulario() {
+	public void PreencheFormularioComEmailInvalido() {
 				
 		driver.findElement(By.name("your-name")).sendKeys("um nome");
 		driver.findElement(By.name("your-email")).sendKeys("email inválido");
@@ -39,13 +39,8 @@ public class UsandoAssertEquals {
 		
 		driver.findElement(By.xpath("//input[@value='Enviar']")).click();
 		
-	}
-	
-	@Test
-	public void RealizaValidacao(){
-		
-		
-		String mensagem = driver.findElement(By.className("wpcf7-not-valid-tip")).getText();
+		WebElement mensagemInvalida = driver.findElement(By.xpath("//span[@role='alert']"));
+		String mensagem = mensagemInvalida.getText();
 		assertEquals("O endereço de e-mail parece inválido.", mensagem);
 	}
 
