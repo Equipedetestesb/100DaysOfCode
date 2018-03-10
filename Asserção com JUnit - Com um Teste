@@ -39,9 +39,10 @@ public class UsandoAssertEquals {
 		
 		driver.findElement(By.xpath("//input[@value='Enviar']")).click();
 		
-		WebElement mensagemInvalida = driver.findElement(By.xpath("//span[@role='alert']"));
-		String mensagem = mensagemInvalida.getText();
+		WebElement emailInvalido = driver.findElement(By.xpath("//span[@role='alert']"));
+		String mensagem = emailInvalido.getText();
 		assertEquals("O endereço de e-mail parece inválido.", mensagem);
+		
 	}
 
 	@After
