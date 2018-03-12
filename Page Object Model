@@ -1,0 +1,30 @@
+package com.pacote.base;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class TestBase {
+	
+		//public static void main(String[] args) throws Exception {
+			//System.setProperty("webdriver.chrome.driver", "C:\\Users\\conrado\\Desktop\\Selenium\\chromedriver.exe");
+
+			WebDriver driver;
+			
+			
+			By username=By.name("user[email]");
+			By password= By.name("user[user_password]");
+			
+			public TestBase(WebDriver driver)
+			{
+				this.driver=driver;
+			}
+				
+			public void typeUserName(){
+				driver.findElement(username).sendKeys("grupodeteste@gmail.com");
+							
+			}
+			public void typePassword(){
+				driver.findElement(password).sendKeys("ssss12");
+			}
+}
