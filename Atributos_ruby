@@ -1,0 +1,54 @@
+--Atributos
+
+class Pessoa
+  def muda_nome(novo_n ome)
+    @nome = novo_nome 
+  end
+
+  def diz_nome
+    "meu nome é #{@nome}"
+  end
+end
+
+p = Pessoa.new
+p.muda_nome "João"
+p.diz_nome
+
+# => "João"
+
+--Initialize:
+
+class Pessoa
+  def initialize
+    puts "Criando nova Pessoa"
+  end
+end
+Pessoa.new
+# => "Criando nova Pessoa"
+
+-- Métodos privados:
+
+class Pessoa
+  def initialize(nome)
+    @nome = nome
+  end
+end
+
+joao = Pessoa.new("João")
+
+--
+
+class Pessoa
+  def nome # acessor
+    @nome
+  end
+
+  def nome=(novo_nome)
+    @nome = novo_nome
+  end
+end
+
+pessoa = Pessoa.new
+pessoa.nome=("José")
+puts pessoa.nome
+# => "José"
