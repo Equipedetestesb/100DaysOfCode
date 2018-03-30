@@ -1,0 +1,25 @@
+package com.cincosete;//Pacote
+import java.io.IOException;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+public class SeguindoIrmao {
+
+	
+
+  public static void main(String[] args)throws IOException, InterruptedException{
+		
+		System.setProperty("webdriver.chrome.driver", "C:\\Automação\\chromedriver32.exe");//Localização do motor instalado na máquina
+		WebDriver driver = new ChromeDriver();
+		driver.get("http://demo.automationtesting.in/Register.html");//abre a página 
+		driver.manage().window().maximize();// maximiza a tela
+		driver.findElement(By.xpath(".//label[text() = 'Full Name* ']/following-sibling::div[1]/input")).sendKeys("Jhon");// neste momento 
+    o que acontece é que o primeiro campo (div[1]) que será acionado é o que está referenciado pela label "Full Name* ", assim se o ID
+    do campo for dinâmico o código não ficará comprometido.
+    
+    }
+    }
