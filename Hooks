@@ -1,0 +1,21 @@
+Hooks: Before e After
+
+Da tradução literal para o português Before significa antes e After significa depois e é isso mesmo que eles fazem, ou seja, tudo que está no Before deve ser executado antes de qualquer coisa e tudo que estiver no After, deve ser executado depois. 
+Essas ações podem ser quaisuqer uma, desde um maximize na tela onde o teste é executado até comandos básicos. 
+
+Pratica: 
+
+Before do
+  # Aqui você coloca tudo que você quer executar antes de cada cenário.
+  # Exemplo: Maximizar a tela antes de iniciar qualquer caso de teste.
+ >> page.driver.browser.manage.window.maximize
+  # Ele coloca o navegador em formato maximizado.
+end
+
+After do
+  # Aqui você coloca tudo que você quer executar após cada cenário.
+  >> Capybara.reset_sessions!
+  # Reset na sessão do navegador após os testes.
+end
+
+Referências: https://github.com/cucumber/cucumber/wiki/Hooks
