@@ -1,0 +1,24 @@
+Criandp arquivo de Steps 
+
+Given/When/And/Then (Dado / Quando / E / Então), são as condições para o Capybara executar seu 'roteiro de teste', ou seja, é a estrutura 
+que precisamos para guiar a execjução dos nossos testes. Veja o exmplo abaixo:
+
+Given("I click on Sign in") do
+  pending #Escreva um código aqui que transforme a frase acima em ações concretas
+end
+
+When("I fill in obligatory fields") do
+  pending #Escreva um código aqui que transforme a frase acima em ações concretas
+end
+
+Then("my registration will be successfully made") do
+  pending #Escreva um código aqui que transforme a frase acima em ações concretas
+end
+
+Para cada Given/When/And/Then + RegEx tem um "do" e um "end", ou seja, Given/When/And/Then da início ao método que vamos
+desenvolver, "do" te da a possibilidade para iníciar o desenvolvimento (escrever os comandos para serem executados) e o "end" finaliza 
+o método. Então podemos concluir que dentro de um arquivo de steps temos um método para cada passo do meu teste.
+Logo quando em qualquer outro arquivo .feature for nesesario a ação 'I click on Sign in' não será necessario escrever novamente, porque 
+ele já foi criado em algum lugar dentro de um método.
+
+Referências: https://github.com/teamcapybara/capybara
