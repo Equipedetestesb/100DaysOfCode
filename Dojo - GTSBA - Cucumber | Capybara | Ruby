@@ -1,0 +1,34 @@
+// Cenário escrito em BDD - Cucumber
+
+Feature: pesquisa_google
+
+EU COMO USUARIO DO GOOGLE DESEJO REALIZAR UMA pesquisa no Google E OBTER O RESULTADO ESPERADO
+
+Scenario: pesquisa_sucesso
+
+Given que quero realizar uma pesquisa
+When digito as palavras chaves 
+And clico no botão pesquisar
+Then os resultados são exibidos com sucesso 
+
+// features/step_definitions/pesquisa_google_steps.rb
+
+Given("que quero realizar uma pesquisa") do
+   visit ('http://www.google.com.br')
+  end
+  
+ When("digito as palavras chaves") do
+   fill_in('lst-ib', :with => 'Capybara')
+ end
+  
+  When("clico no botão pesquisar") do
+    click_button('Pesquisa Google')
+  end
+  
+  Then("os resultados são exibidos com sucesso") do
+    page.should have_content('Wikipedia')
+  end
+  
+  
+  Obs: Todo o conteudo foi criado na meetup que ocorreu no Ruy Barbosa dia 29/04, a palestra foi dirigida por Rafael Amaral.
+  https://github.com/amaralrfl/dojo-GTS_Ba
