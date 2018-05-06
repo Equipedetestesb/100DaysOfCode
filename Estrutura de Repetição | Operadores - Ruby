@@ -1,0 +1,27 @@
+Estrutura de Repetição
+
+While - Enquanto a condição for verdadeira irá executar o bloco de repeticao
+
+i = 1
+
+while i <= 50
+    puts "Treinando estrutura de repetição While"
+    i += 1
+end
+
+Operadores
+
+* Adição
+* Subtração
+* Multiplicação
+* Divisão 
+
+Respectivos Cases:
+
+puts "A soma de 1 + 2 é: #{1 + 2}"
+puts "A subtração de 2 - 1 é: #{2 - 1}"
+puts "A multiplicação de 1 * 2 é: #{1 * 2}"
+puts "A divisão de 10 / 2 é: #{10 / 2}"
+
+
+Referências: https://guru-sp.github.io/tutorial_ruby/
